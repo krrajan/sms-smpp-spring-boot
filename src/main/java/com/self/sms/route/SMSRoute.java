@@ -29,8 +29,6 @@ import com.self.sms.util.Constants;
 @Component
 public class SMSRoute {
 
-	@Value("${notification.sms.opco}")
-	private String opco;
 
 	@Value("${notification.sms.is-isdn:false}")
 	private boolean isISDN;
@@ -62,7 +60,6 @@ public class SMSRoute {
 		registeredDelivery.setSMSCDeliveryReceipt(SMSCDeliveryReceipt.SUCCESS_FAILURE);
 		String source = autoReconnectGateway.getSource();
 
-		// currently isISDN should be true only for MW
 		if (isISDN) {
 			numberingPlanIndicator = NumberingPlanIndicator.ISDN;
 		} else {
